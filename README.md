@@ -11,4 +11,5 @@
 > DOM Manipulation: Demonstrates basic DOM manipulation techniques.
 > Input Attributes: Covers input types, placeholders, defaultChecked, onChange, value and onClick events.
 
-# npm run dev #
+- To start the project: 
+  npm run dev 
