@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 function App() {
  
@@ -6,6 +6,8 @@ function App() {
   const [numPresent , setNumPresent] = useState(false);
   const [charPresent , setCharPresent] = useState(false);
   const [password , setPassword] = useState("");
+
+  const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -21,17 +23,23 @@ function App() {
     setPassword(pass);
 
   } , [length , numPresent , charPresent , setPassword]);
+
+  const copyPassword = useCallback(() => {
+    passwordRef.current?.select();
+    //passwordRef.current?.setSelectionRange(0,20); (select only first 20 chars of password)
+    window.navigator.clipboard.writeText(password);
+  } , [ password])
   
   useEffect(() => {
     passwordGenerator();
   } , [length , numPresent , charPresent , passwordGenerator])
  
   return (
-    <div className="bg-gray-700 w-full  max-w-md mx-auto px-2 mt-20 py-2
+    <div className="bg-gray-700 w-full max-w-max px-6 mt-40 py-4 mx-auto 
     rounded-lg   overflow-hidden">
      <div className='font-semibold text-3xl mt-10 text-white text-center  '>Password Generator</div>
 
-     <div className="mt-6">
+     <div className="mt-10 mb-4">
 
         <div className="flex my-4">
 
@@ -41,14 +49,19 @@ function App() {
             className="outline-none w-full py-1 px-4 rounded-lg"
             placeholder="Password"
             readOnly
+            ref={passwordRef}
+            
           />
 
-          <button className="bg-blue-400 text-blue-900 text-lg font-semibold px-2 rounded-lg ml-2">Copy</button>
+          <button className="bg-blue-600 shadow-2xl shadow-black text-white text-lg font-semibold px-2 rounded-lg
+           ml-2 active:bg-blue-700 active:mr-1
+          "
+          onClick = {copyPassword}>Copy</button>
 
         </div>
     
         <div className="flex text-sm gap-x-2">
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-1 ">
             <input 
             type="range"
             min={6}
@@ -58,7 +71,7 @@ function App() {
             onChange={(e) => {setLength(e.target.value)}}
             />
             <label 
-             className=" text-blue-400 font-semibold text-lg"> length: {length}
+             className=" text-blue-500 font-semibold text-lg"> length: {length}
             </label>
 
           </div>
@@ -74,7 +87,7 @@ function App() {
             />
             <label 
             htmlFor="NumbersInput"
-             className=" text-blue-400 font-semibold text-lg"> Numbers
+             className=" text-blue-500 font-semibold text-lg"> Numbers
             </label>
           </div>
 
@@ -89,7 +102,7 @@ function App() {
             />
             <label 
             htmlFor="CharacterInput"
-             className=" text-blue-400 font-semibold text-lg"> characters
+             className=" text-blue-500 font-semibold text-lg"> characters
             </label>
           </div>
         
