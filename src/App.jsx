@@ -35,8 +35,8 @@ function App() {
   } , [length , numPresent , charPresent , passwordGenerator])
  
   return (
-    <div className="bg-gray-700 w-full max-w-max px-6 mt-40 py-4 mx-auto 
-    rounded-lg   overflow-hidden">
+    <div className="border-gray-700  border-2 shadow-md shadow-gray-700 w-full max-w-max px-6 mt-40 py-4 mx-auto 
+    rounded-lg bg-gray-900  overflow-hidden">
      <div className='font-semibold text-3xl mt-10 text-white text-center  '>Password Generator</div>
 
      <div className="mt-10 mb-4">
@@ -61,7 +61,7 @@ function App() {
         </div>
     
         <div className="flex text-sm gap-x-2">
-          <div className="flex items-center gap-x-1 ">
+          <div className="flex items-center gap-x-1">
             <input 
             type="range"
             min={6}
