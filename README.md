@@ -1,15 +1,17 @@
-# Created using vite + tailwind Css
+# LogIn/SignUp Page
+### Created Using React + vite
+- Used amazon logo
+- Used regex for password and email validation✅
+- Used firebase to deploy the project 
 
-# Features
+## Firebase commands:
+* npm install -g firebase-tools
+- firebase login
+- firebase init
+- firebase deploy
+- Also created my web</> app in firebase
 
-> Password Generation: The app generates random passwords.
-
-> React Components: Utilizes React components for a modular structure.
-
-> Tailwind CSS: Styling is done using Tailwind CSS for a clean and responsive design.
-
-> DOM Manipulation: Demonstrates basic DOM manipulation techniques.
-> Input Attributes: Covers input types, placeholders, defaultChecked, onChange, value and onClick events.
-
-- To start the project: 
-  npm run dev 
+#### Run the project using cmd:
+* npm run dev 
+ 
+# Keep coding💙.
