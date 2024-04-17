@@ -1,10 +1,12 @@
-# Created using vite + tailwind Css
+# Created using React + Vite + tailwind Css
 
 # Features
 
 > Password Generation: The app generates random passwords.
 
 > React Components: Utilizes React components for a modular structure.
+
+> Password can be copied and get pasted anywhere 
 
 > Tailwind CSS: Styling is done using Tailwind CSS for a clean and responsive design.
 
