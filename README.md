@@ -1,4 +1,4 @@
-# Created using vite + tailwind Css
+# Created using React + Vite + tailwind Css
 
 # Features
 
